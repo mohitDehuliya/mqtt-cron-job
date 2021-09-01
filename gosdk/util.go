@@ -5,7 +5,7 @@ import (
 )
 
 func GetCurrentTS() int64 {
-	return (time.Now().UnixNano() / 1000000)
+	return (time.Now().Unix())
 }
 
 func CreateThingHeartbeat(t *Thing, ts int64) map[string]interface{} {
