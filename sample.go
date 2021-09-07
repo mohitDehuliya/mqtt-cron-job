@@ -71,7 +71,7 @@ func main() {
 
 	t := gosdk.NewThing()
 	t.Name = "water_meter"
-	t.Key = "smly_HrgS8nlRP9"
+	t.Key = "smly_ngCoKivaJM"
 	if err := gw.ThingRegister(t); err != nil {
 		fmt.Println("Unable to Register: ", err)
 	}
@@ -86,7 +86,7 @@ func main() {
 	// Send Alerts
 	sendAlerts(gw, t)
 	count := 0
-	for i := 0; i < 15; i++ {
+	for i := 0; i < 1000; i++ {
 		if count == 0 {
 			// Send a heartbeat.
 			gw.ThingHeartbeat(t, 0)
@@ -98,6 +98,6 @@ func main() {
 	}
 
 	fmt.Println("Waiting...")
-	time.Sleep(time.Duration(30 * time.Second))
+	time.Sleep(time.Duration(1 * time.Second))
 	fmt.Println("Bye Bye")
 }
