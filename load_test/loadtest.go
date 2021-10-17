@@ -8,6 +8,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/joshsoftware/mqtt-sdk-go/common/constants"
 	"github.com/joshsoftware/mqtt-sdk-go/gosdk"
 )
 
@@ -111,7 +112,7 @@ func launch_thing_test(gw gosdk.Gateway, test_key string) {
 	// Send Alerts
 	sendAlerts(gw, t)
 	count := 0
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < constants.TestIterations; i++ {
 		if count == 0 {
 			// Send a heartbeat.
 			gw.ThingHeartbeat(t, 0)
