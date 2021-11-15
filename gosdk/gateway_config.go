@@ -12,7 +12,7 @@ type GatewayConfig struct {
 
 func InitGatewayConfig(c *GatewayConfig) *GatewayConfig {
 	if c.Host == "" {
-		c.Host = "localhost"
+		c.Host = "65.0.106.100"
 	}
 	if c.Port == 0 {
 		c.Port = 1883
