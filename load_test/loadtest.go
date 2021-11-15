@@ -110,23 +110,8 @@ func launch_thing_test(gw gosdk.Gateway, test_key string) {
 
 	// Send Alerts
 	sendAlerts(gw, t)
-	fmt.Println("----->")
-	fmt.Println(t)
-	fmt.Println("----->")
-	// count := 0
-	// for i := 0; i < 1000; i++ {
-	// if count == 0 {
-	// 	// Send a heartbeat.
-	// 	gw.ThingHeartbeat(t, 0)
-	// }
+
 	sendEvent(gw, t)
 	time.Sleep(time.Duration(1 * time.Second))
-	//count++
-	//count = count % 3
-	//}
-
-	//fmt.Println("Waiting...")
-	//time.Sleep(time.Duration(1 * time.Second))
-	//fmt.Println("Bye Bye")
 
 }

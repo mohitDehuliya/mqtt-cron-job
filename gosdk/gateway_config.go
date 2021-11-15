@@ -1,6 +1,10 @@
 package gosdk
 
-import "fmt"
+import (
+	"fmt"
+
+	constant "github.com/joshsoftware/mqtt-sdk-go/common/constants"
+)
 
 type GatewayConfig struct {
 	AccessKey string
@@ -15,7 +19,7 @@ func InitGatewayConfig(c *GatewayConfig) *GatewayConfig {
 		c.Host = "65.0.106.100"
 	}
 	if c.Port == 0 {
-		c.Port = 1883
+		c.Port = constant.MQTTPort
 	}
 
 	return c
